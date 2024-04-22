@@ -13,8 +13,7 @@ public class Studente extends Persona {
         }
         System.out.println("Anno di nascita inserito correttamente ");
         System.out.println("Hai inserito: " + getAnnoDiNascita());
-
-
+        //this.annoDiNascita = annoDiNascita;
     }
     
     public int getClasse() {
