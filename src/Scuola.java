@@ -39,10 +39,14 @@ public class Scuola {
         for (int j = 0; j < studenti.size(); j++) {
         i++;
 
-        // Do un valore alla matricola utilizzando la variabile i
-        // *** DA CAMBIARE LA QUESTIONE DELLA DATA ***
-        // String.format("%03d", i - 1) permette di vedere un numero a tre cifre invece che una sola: 001 invece di 1
-        studenti.get(i - 1).setMatricola((2015 % 100) + String.format("%03d", i - 1) + studenti.get(i-1).getSezione());
+        /*
+        Questo blocco di codice mi permette di costruire la matricola seguendo le istruzioni della traccia.
+        -Do un valore alla matricola utilizzando la variabile i
+        -String.format("%03d", i - 1) permette di vedere un numero a tre cifre invece che una sola: 001 invece di 1
+        -Anno di nascita % 100 mi dà gli ultimi due numeri della data di nascita
+        */
+        studenti.get(i - 1).setMatricola((studenti.get(i - 1).getAnnoDiNascita() % 100)
+        + String.format("%03d", i - 1) + studenti.get(i-1).getSezione());
 
         System.out.println
         ("Studente numero " + i + ":\n"
