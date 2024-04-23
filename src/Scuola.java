@@ -176,12 +176,52 @@ public class Scuola {
     public void start() {
         System.out.println("Seleziona quale operazione vuoi eseguire");
         int index = 0;
+
+        System.out.println("Scegli Operazione: ");
+        System.out.println("1. Aggiungi studente");
+        System.out.println("2. Aggiungi docente");
+        System.out.println("3. Aggiungi membro club");
+        System.out.println("4. Stampa studenti");
+        System.out.println("5. Stampa docenti");
+        System.out.println("6. Stampa membri Club");
+        System.out.println("7. Termina programma");
         
-        switch (index) {
-            case 1:
-            // codice
-            break;
-        }
+        boolean ripetiMenu = true;
+        do {
+            switch (index) {
+                case 1:
+                aggiungiStudente();
+                System.out.println("\n Premi un tasto e invio per tornare al menu");
+                char tornareAlMenu = scannerTesto.nextLine().toUpperCase().charAt(0);
+                
+                break;
+                case 2:
+                aggiungiProfessore();
+                break;
+                case 3:
+                aggiungiIscrittoClub();
+                break;
+                case 4:
+                stampaStudenti();
+                break;
+                case 5:
+                stampaProfessori();
+                break;
+                case 6:
+                stampaIscrittiClub();
+                break;
+                case 7:
+                System.out.println("Programma in chiusura");
+                System.out.println("Arrivederci");
+                scannerNumero.close();
+                scannerTesto.close();
+                System.exit(0);
+                break;
+                default:
+                System.out.println("Seleziona un numero da 1 a 7");
+                break;
+            }
+        } while (ripetiMenu);
     }
 }
 
