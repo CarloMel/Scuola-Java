@@ -175,39 +175,52 @@ public class Scuola {
 
     public void start() {
         int index = 0;
-
-        System.out.println("Scegli Operazione: \n");
-        System.out.println("1. Aggiungi studente");
-        System.out.println("2. Aggiungi docente");
-        System.out.println("3. Aggiungi membro club");
-        System.out.println("4. Stampa studenti");
-        System.out.println("5. Stampa docenti");
-        System.out.println("6. Stampa membri Club");
-        System.out.println("7. Termina programma");
-
-        System.out.println("\nSeleziona quale operazione vuoi eseguire");
-        index = scannerNumero.nextInt();
-        
         boolean ripetiMenu = true;
+
         do {
+
+            System.out.println("Scegli Operazione: \n");
+            System.out.println("1. Aggiungi studente");
+            System.out.println("2. Aggiungi docente");
+            System.out.println("3. Aggiungi membro club");
+            System.out.println("4. Stampa studenti");
+            System.out.println("5. Stampa docenti");
+            System.out.println("6. Stampa membri Club");
+            System.out.println("7. Termina programma");
+    
+            System.out.println("\nSeleziona quale operazione vuoi eseguire");
+            index = scannerNumero.nextInt();
+
             switch (index) {
                 case 1:
                 aggiungiStudente();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 2:
                 aggiungiProfessore();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 3:
                 aggiungiIscrittoClub();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 4:
                 stampaStudenti();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 5:
                 stampaProfessori();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 6:
                 stampaIscrittiClub();
+                System.out.println("Premi un tasto e Invio per tornare al menù");
+                scannerTesto.nextLine();
                 break;
                 case 7:
                 System.out.println("Programma in chiusura");
