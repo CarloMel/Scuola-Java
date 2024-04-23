@@ -26,7 +26,6 @@ abstract class Persona {
                 ripeti = false;
             }
         } while (ripeti);
-        this.nome = nome;
     }
 
     public String getCognome() {
@@ -34,7 +33,17 @@ abstract class Persona {
     }
 
     public void setCognome(String cognome) {
-        this.cognome = cognome;
+        boolean ripeti = true;
+        do {
+            if (cognome.matches(".*\\d.*")) {
+                System.out.println("Dato non corretto");
+                System.out.println("Nei cognomi non può essere presente un numero");
+                cognome = scannerTesto.nextLine().trim();
+            } else {
+                this.cognome = cognome;
+                ripeti = false;
+            }
+        } while (ripeti);
     }
 
     public abstract int getAnnoDiNascita();
