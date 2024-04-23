@@ -175,9 +175,13 @@ public class Scuola {
 
     public void start() {
         System.out.println("Seleziona quale operazione vuoi eseguire");
-        int index;
+        int index = 0;
         
-        //switch (index)
+        switch (index) {
+            case 1:
+            // codice
+            break;
+        }
     }
 }
 
