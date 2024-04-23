@@ -1,18 +1,26 @@
+import java.util.Scanner;
 
 public class Studente extends Persona {
     private int classe;
     private String sezione;
     private String matricola;
+
+    Scanner scannerNumero = new Scanner(System.in);
     
     @Override
     public void setAnnoDiNascita(int annoDiNascita) {
 
-        if(annoDiNascita > 2018){
-            System.out.println("Si accettano solo studenti nati prima del 2018 (2018 compreso)");
-            
-        }
-        System.out.println("Anno di nascita inserito correttamente ");
-        this.annoDiNascita = annoDiNascita;
+        boolean ripeti = true;
+        do {
+            if(annoDiNascita >= 2000 && annoDiNascita <= 2018 ) {
+                this.annoDiNascita = annoDiNascita;
+                ripeti = false;
+            } else {
+                System.out.println("Dato non corretto");
+                System.out.println("Si accettano solo studenti nati tra il 2000 e il 2018");
+                annoDiNascita = scannerNumero.nextInt();
+            }
+        } while (ripeti);
     }
 
     @Override
