@@ -9,6 +9,7 @@ public class Studente extends Persona {
 
         if(annoDiNascita > 2018){
             System.out.println("Si accettano solo studenti nati prima del 2018 (2018 compreso)");
+            
         }
         System.out.println("Anno di nascita inserito correttamente ");
         this.annoDiNascita = annoDiNascita;

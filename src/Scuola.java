@@ -34,36 +34,17 @@ public class Scuola {
             System.out.println("Vuoi inserire un altro studente? S/N");
             char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
 
-            if (conferma == 'N') {
+            if (conferma == 'S') {
                 studenti.add(new Studente());
                 // ripeti resta true
                 // aumento i per tenere conto della posizione del nuovo studente nell'ArrayList
                 i++;
+            } else {
+                ripeti = false;
             }
 
         } while (ripeti);
     }
-/*     public void aggiungiStudente() {     
-        Studente studente1 = new Studente();
-
-        studente1.setNome("Mario");
-        studente1.setCognome("Rossi");
-        studente1.setAnnoDiNascita(2018);
-        studente1.setClasse(1);
-        studente1.setSezione("A");
-
-        studenti.add(studente1);
-
-        Studente studente2 = new Studente();
-
-        studente2.setNome("Luigi");
-        studente2.setCognome("Verdi");
-        studente2.setAnnoDiNascita(2015);
-        studente2.setClasse(2);
-        studente2.setSezione("B");
-
-        studenti.add(studente2);
-    } */
 
     public void stampaStudenti() {
         // i mi serve per tenere traccia della posizione all'interno dell'ArrayList
