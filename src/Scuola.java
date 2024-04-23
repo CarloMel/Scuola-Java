@@ -59,8 +59,9 @@ public class Scuola {
             docenti.get(i).setCognome(scannerTesto.nextLine().trim());
             System.out.println("Inserisci la data di nascita del docente: ");
             docenti.get(i).setAnnoDiNascita(scannerNumero.nextInt());
-            System.out.println("Inserisci classe del docente: ");
+            System.out.println("Inserisci la materia insegnata dal docente: ");
             docenti.get(i).setMateria(scannerTesto.nextLine());
+
             System.out.println("Tutti i dati sono stati correttamente inseriti");
             System.out.println("Vuoi inserire un altro docente? S/N");
             char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
@@ -113,7 +114,7 @@ public class Scuola {
         + "Nome: " + docenti.get(i - 1).getNome() + "\n"
         + "Cognome: " + docenti.get(i - 1).getCognome() + "\n"
         + "Anno di Nascita: " + docenti.get(i - 1).getAnnoDiNascita() + "\n"
-        + "Materia: " + docenti.get(i - 1).getMateria());
+        + "Materia: " + docenti.get(i - 1).getMateria() + "\n");
         }
     }
 }
