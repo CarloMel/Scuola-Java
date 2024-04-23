@@ -3,7 +3,8 @@
 abstract class Persona {
     private String nome;
     private String cognome;
-    private int annoDiNascita;
+    // protected serve per  farsì che questa variabile venga vista dalle classi figlie
+    protected int annoDiNascita;
 
     public String getNome() {
         return this.nome;
@@ -21,9 +22,7 @@ abstract class Persona {
         this.cognome = cognome;
     }
 
-    public int getAnnoDiNascita() {
-        return this.annoDiNascita;
-    }
+    public abstract int getAnnoDiNascita();
 
     //  Filtra Docenti nati => 1964 && <= 1994 , Studenti nati <= 2018
     public abstract void setAnnoDiNascita(int annoDiNascita);

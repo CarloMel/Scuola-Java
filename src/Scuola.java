@@ -42,11 +42,12 @@ public class Scuola {
         /*
         Questo blocco di codice mi permette di costruire la matricola seguendo le istruzioni della traccia.
         -Do un valore alla matricola utilizzando la variabile i
-        -String.format("%03d", i - 1) permette di vedere un numero a tre cifre invece che una sola: 001 invece di 1
+        -String.format("%03d", i) permette di vedere un numero a tre cifre invece che una sola: 001 invece di 1
+        - levo (i - i) perché voglio0 che il numero progressivo parta da 001
         -Anno di nascita % 100 mi dà gli ultimi due numeri della data di nascita
         */
         studenti.get(i - 1).setMatricola((studenti.get(i - 1).getAnnoDiNascita() % 100)
-        + String.format("%03d", i - 1) + studenti.get(i-1).getSezione());
+        + String.format("%03d", i) + studenti.get(i-1).getSezione());
 
         System.out.println
         ("Studente numero " + i + ":\n"

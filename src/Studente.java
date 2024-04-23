@@ -2,7 +2,6 @@
 public class Studente extends Persona {
     private int classe;
     private String sezione;
-    private int numeroProgressivo = 0;
     private String matricola;
     // ***this.annoDiNascita = annoDiNascita !! super.annoDiNascita = annoDiNascita NON FUNZIONANO. Le date restano 0***
     @Override
@@ -13,7 +12,12 @@ public class Studente extends Persona {
         }
         System.out.println("Anno di nascita inserito correttamente ");
         System.out.println("Hai inserito: " + getAnnoDiNascita());
-        //this.annoDiNascita = annoDiNascita;
+        this.annoDiNascita = annoDiNascita;
+    }
+
+    @Override
+    public int getAnnoDiNascita() {
+        return annoDiNascita;
     }
     
     public int getClasse() {
@@ -43,13 +47,5 @@ public class Studente extends Persona {
 
     public void setMatricola(String matricola) {
         this.matricola = matricola;
-    }
-    
-    public int getNumeroProgressivo() {
-        return numeroProgressivo;
-    }
-
-    public void setNumeroProgressivo(int numeroProgressivo) {
-        this.numeroProgressivo = numeroProgressivo;
     }
 }
