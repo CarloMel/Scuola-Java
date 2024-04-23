@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Studente extends Persona {
+public class Studente extends Persona implements Palestra {
     private int classe;
     private char sezione;
     private String matricola;
