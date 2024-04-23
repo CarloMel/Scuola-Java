@@ -175,8 +175,9 @@ public class Scuola {
 
     public void start() {
         System.out.println("Seleziona quale operazione vuoi eseguire");
-        //int index;
-        // inserire un MENU a numeri in cui selezionare le cose da fare
+        int index;
+        
+        //switch (index)
     }
 }
 
