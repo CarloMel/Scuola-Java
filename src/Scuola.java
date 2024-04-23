@@ -10,7 +10,7 @@ public class Scuola {
     List<Docente> docenti = new ArrayList<Docente>();
     //ArrayList<MembroClub> membriClub = new ArrayList<MembroClub>();
 
-    public void aggiungiStudenti() {
+    public void aggiungiStudente() {
         // creo i per tenere traccia dello studente al quale aggiungere i dati nell'ArrayList
         int i = 0;
         boolean ripeti = true;
@@ -47,7 +47,7 @@ public class Scuola {
         } while (ripeti);
     }
 
-    public void aggiungiProfessori () {
+    public void aggiungiProfessore () {
         int i = 0;
         boolean ripeti = true;
         docenti.add(new Docente());
@@ -102,4 +102,19 @@ public class Scuola {
         + "Matricola: " + studenti.get(i - 1).getMatricola() + "\n");
         }
     }
+    public void stampaProfessori() {
+        int i = 0;
+        System.out.println("Nella scuola ci sono in totale " + docenti.size() + " professori\n");
+        for (int j = 0; j < docenti.size(); j++) {
+        i++;
+
+        System.out.println
+        ("Studente numero " + i + ":\n"
+        + "Nome: " + docenti.get(i - 1).getNome() + "\n"
+        + "Cognome: " + docenti.get(i - 1).getCognome() + "\n"
+        + "Anno di Nascita: " + docenti.get(i - 1).getAnnoDiNascita() + "\n"
+        + "Materia: " + docenti.get(i - 1).getMateria());
+        }
+    }
 }
+

@@ -5,7 +5,8 @@ List&lt;Docente&gt;;
 List&lt;MembroClub&gt;;
 --
 Menu(); {
-inserisciInCategoria();
+aggiungiStudente();
+aggiungiProfessore();
 stampaStudenti();
 stampaDocenti();
 stampaMembriClub();
