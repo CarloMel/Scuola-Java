@@ -27,7 +27,6 @@ public class Scuola {
             studenti.get(i).setAnnoDiNascita(scannerNumero.nextInt());
             System.out.println("Inserisci classe dello studente: ");
             studenti.get(i).setClasse(scannerNumero.nextInt());
-            // ***mi crasha se scrivo "ciao"***
             System.out.println("Inserisci la sezione dello studente: ");
             studenti.get(i).setSezione(scannerTesto.nextLine().toUpperCase().charAt(0));
             System.out.println("Inserisci l'anno del certificato Medico dello studente: ");
