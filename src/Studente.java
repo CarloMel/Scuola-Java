@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Studente extends Persona {
     private int classe;
-    private String sezione;
+    private char sezione;
     private String matricola;
 
     Scanner scannerNumero = new Scanner(System.in);
@@ -38,12 +38,12 @@ public class Studente extends Persona {
     }
 
 
-    public String getSezione() {
+    public char getSezione() {
         return sezione;
     }
 
 
-    public void setSezione(String sezione) {
+    public void setSezione(char sezione) {
         this.sezione = sezione;
     }
 
