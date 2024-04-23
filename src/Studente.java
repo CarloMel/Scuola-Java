@@ -92,7 +92,7 @@ public class Studente extends Persona implements Palestra {
         boolean ripeti = true;
         do {
             // il certificato dura 5 anni
-            if ( annoCertificato >= 2024 && annoCertificato <= 2019) {
+            if ( annoCertificato >= 2019 && annoCertificato <= 2024 ) {
                 this.annoCertificato = annoCertificato;
                 ripeti = false;
             } else {
