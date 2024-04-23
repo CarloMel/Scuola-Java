@@ -55,7 +55,18 @@ public class Studente extends Persona {
 
 
     public void setSezione(char sezione) {
-        this.sezione = sezione;
+        boolean ripeti = true;
+        do {
+            // uso il metodo isLetter() della classe Character per verificare se la variabile "sezione" sia una lettera e non un numero
+            if(Character.isLetter(sezione)) {
+                this.sezione = sezione;
+                ripeti = false;
+            } else {
+                System.out.println("Dato non corretto");
+                System.out.println("Le sezioni non devono essere numeri");
+                sezione = scannerTesto.nextLine().toUpperCase().charAt(0);
+            }
+        } while (ripeti);
     }
 
 
