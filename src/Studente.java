@@ -17,6 +17,7 @@ public class Studente extends Persona implements Palestra {
         do {
             // è una scuola molto inclusiva, accetta anche centenni
             if(annoDiNascita >= 1918 && annoDiNascita <= 2018 ) {
+                System.out.println("Dato inserito correttamente");
                 this.annoDiNascita = annoDiNascita;
                 ripeti = false;
             } else {
@@ -40,18 +41,13 @@ public class Studente extends Persona implements Palestra {
     public void setClasse(int classe) {
         boolean ripeti = true;
         do {
-            // se invece di un numero, inserisci una lettera, non crasha
-            try {       
-                if(classe >= 1 &&  classe <= 5) {
-                    this.classe = classe;
-                    ripeti = false;
-                } else {
-                    System.out.println("Dato non corretto");
-                    System.out.println("Le classi vanno da 1 a 5");
-                    classe = scannerNumero.nextInt();
-                }
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Input non valido, devi inserire un numero");
+            if(classe >= 1 &&  classe <= 5) {
+                this.classe = classe;
+                ripeti = false;
+            } else {
+                System.out.println("Dato non corretto");
+                System.out.println("Le classi vanno da 1 a 5");
+                classe = scannerNumero.nextInt();
             }
         } while (ripeti);
     }

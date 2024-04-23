@@ -194,32 +194,32 @@ public class Scuola {
             switch (index) {
                 case 1:
                 aggiungiStudente();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 2:
                 aggiungiProfessore();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 3:
                 aggiungiIscrittoClub();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 4:
                 stampaStudenti();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 5:
                 stampaProfessori();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 6:
                 stampaIscrittiClub();
-                System.out.println("Premi un tasto e Invio per tornare al menù");
+                System.out.println("Premi Invio per tornare al menù");
                 scannerTesto.nextLine();
                 break;
                 case 7:

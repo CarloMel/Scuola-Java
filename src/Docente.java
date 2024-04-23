@@ -12,6 +12,7 @@ public class Docente extends Persona {
         boolean ripeti = true;
         do {
             if(annoDiNascita >= 1964 && annoDiNascita <= 1994 ) {
+                System.out.println("Dato inserito correttamente");
                 this.annoDiNascita = annoDiNascita;
                 ripeti = false;
             } else {
