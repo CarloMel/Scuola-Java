@@ -13,12 +13,13 @@ public class Studente extends Persona {
 
         boolean ripeti = true;
         do {
-            if(annoDiNascita >= 2000 && annoDiNascita <= 2018 ) {
+            // è una scuola molto inclusiva, accetta anche centenni
+            if(annoDiNascita >= 1918 && annoDiNascita <= 2018 ) {
                 this.annoDiNascita = annoDiNascita;
                 ripeti = false;
             } else {
                 System.out.println("Dato non corretto");
-                System.out.println("Si accettano solo studenti nati tra il 2000 e il 2018");
+                System.out.println("Si accettano solo studenti nati tra il 1918 e il 2018");
                 annoDiNascita = scannerNumero.nextInt();
             }
         } while (ripeti);
