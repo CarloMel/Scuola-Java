@@ -8,7 +8,7 @@ public class Scuola {
     Scanner scannerTesto = new Scanner(System.in);
     List<Studente> studenti = new ArrayList<Studente>();
     List<Docente> docenti = new ArrayList<Docente>();
-    //ArrayList<MembroClub> membriClub = new ArrayList<MembroClub>();
+    List<IscrittoClub> iscrittiClub = new ArrayList<IscrittoClub>();
 
     public void aggiungiStudente() {
         // creo i per tenere traccia dello studente al quale aggiungere i dati nell'ArrayList
@@ -30,6 +30,10 @@ public class Scuola {
             // ***mi crasha se scrivo "ciao"***
             System.out.println("Inserisci la sezione dello studente: ");
             studenti.get(i).setSezione(scannerTesto.nextLine().toUpperCase().charAt(0));
+            System.out.println("Inserisci l'anno del certificato Medico dello studente: ");
+            studenti.get(i).setAnnoCertificato(scannerNumero.nextInt());
+            System.out.println("Inserisci il cognome del Medico che ha firmato il certificato dello studente: ");
+            studenti.get(i).setCognomeMedico(scannerTesto.nextLine().trim());
 
             System.out.println("Tutti i dati sono stati correttamente inseriti");
             System.out.println("Vuoi inserire un altro studente? S/N");
@@ -75,6 +79,40 @@ public class Scuola {
 
         } while (ripeti);
     }
+    public void aggiungiIscrittoClub() {
+
+        int i = 0;
+        boolean ripeti = true;
+
+        iscrittiClub.add(new IscrittoClub());
+        do {
+            System.out.println("Iscritto numero " + (i + 1) + "\n");
+            System.out.println("Inserisci il nome del membro del club: ");
+            // trim() rimuove spazi inutilizzati
+            iscrittiClub.get(i).setNome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci il cognome del membro del club: ");
+            iscrittiClub.get(i).setCognome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci l'anno del certificato Medico del membro del club: ");
+            iscrittiClub.get(i).setAnnoCertificato(scannerNumero.nextInt());
+            System.out.println("Inserisci il cognome del Medico che ha firmato il certificato del membro del club: ");
+            iscrittiClub.get(i).setCognomeMedico(scannerTesto.nextLine().trim());
+            System.out.println("Tutti i dati sono stati correttamente inseriti");
+
+            System.out.println("Vuoi inserire un altro membro del club? S/N");
+            char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
+
+            if (conferma == 'S') {
+                studenti.add(new Studente());
+                // ripeti resta true
+                // aumento i per tenere conto della posizione del nuovo studente nell'ArrayList
+                i++;
+            } else {
+                ripeti = false;
+            }
+
+        } while (ripeti);
+    }
+
     public void stampaStudenti() {
         // i mi serve per tenere traccia della posizione all'interno dell'ArrayList
         // scriverò (i - 1) altrimenti ignorerebbe il primo elemento dell'ArrayList
@@ -100,7 +138,9 @@ public class Scuola {
         + "Anno di Nascita: " + studenti.get(i - 1).getAnnoDiNascita() + "\n"
         + "Classe: " + studenti.get(i - 1).getClasse() + "\n"
         + "Sezione: " + studenti.get(i - 1).getSezione() + "\n"
-        + "Matricola: " + studenti.get(i - 1).getMatricola() + "\n");
+        + "Matricola: " + studenti.get(i - 1).getMatricola() + "\n"
+        + "Anno del rilascio certificato medico: " + studenti.get(i - 1).getAnnoCertificato() + "\n"
+        + "Cognome del Medico che lo ha rilasciato: " + studenti.get(i - 1).getCognomeMedico() + "\n");
         }
     }
     public void stampaProfessori() {
@@ -115,6 +155,22 @@ public class Scuola {
         + "Cognome: " + docenti.get(i - 1).getCognome() + "\n"
         + "Anno di Nascita: " + docenti.get(i - 1).getAnnoDiNascita() + "\n"
         + "Materia: " + docenti.get(i - 1).getMateria() + "\n");
+        }
+    }
+
+    public void stampaIscrittiClub() {
+
+        int i = 0;
+        System.out.println("Nella palestra ci sono in totale " + iscrittiClub.size() + " iscritti\n");
+        for (int j = 0; j < iscrittiClub.size(); j++) {
+        i++;
+
+        System.out.println
+        ("Iscritto numero " + i + ":\n"
+        + "Nome: " + iscrittiClub.get(i - 1).getNome() + "\n"
+        + "Cognome: " + iscrittiClub.get(i - 1).getCognome() + "\n"
+        + "Anno del rilascio certificato medico: " + iscrittiClub.get(i - 1).getAnnoCertificato() + "\n"
+        + "Cognome del Medico che lo ha rilasciato: " + iscrittiClub.get(i - 1).getCognomeMedico() + "\n");
         }
     }
 }
