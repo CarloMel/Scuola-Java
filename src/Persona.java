@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 abstract class Persona {
     private String nome;
@@ -6,11 +6,26 @@ abstract class Persona {
     // protected serve per  farsì che questa variabile venga vista dalle classi figlie
     protected int annoDiNascita;
 
+    Scanner scannerNumero = new Scanner(System.in);
+    Scanner scannerTesto = new Scanner(System.in);
+
     public String getNome() {
         return this.nome;
     }
 
+  // nome.matches(".*\\d.*") serve per verificare la presenza di numeri all'interno del nome
     public void setNome(String nome) {
+        boolean ripeti = true;
+        do {
+            if (nome.matches(".*\\d.*")) {
+                System.out.println("Dato non corretto");
+                System.out.println("Nei nomi non può essere presente un numero");
+                nome = scannerTesto.nextLine().trim();
+            } else {
+                this.nome = nome;
+                ripeti = false;
+            }
+        } while (ripeti);
         this.nome = nome;
     }
 
