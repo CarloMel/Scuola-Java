@@ -4,12 +4,46 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Scuola {
-    Scanner scannerInt = new Scanner(System.in);
+    Scanner scannerNumero = new Scanner(System.in);
+    Scanner scannerTesto = new Scanner(System.in);
     List<Studente> studenti = new ArrayList<Studente>();
     //ArrayList<Docente> docenti = new ArrayList<Docente>();
     //ArrayList<MembroClub> membriClub = new ArrayList<MembroClub>();
 
-    public void aggiungiStudente() {     
+    public void aggiungiStudenti() {
+        // creo i per tenere traccia dello studente al quale aggiungere i dati nell'ArrayList
+        int i = 0;
+        boolean ripeti = true;
+        // prima aggiungo uno studente, poi gli do le info
+        studenti.add(new Studente());
+        do {
+            System.out.println("Studente numero " + (i + 1) + "\n");
+            System.out.println("Inserisci il nome dello studente: ");
+            // trim() rimuove spazi inutilizzati
+            studenti.get(i).setNome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci il cognome dello studente: ");
+            studenti.get(i).setCognome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci la data di nascita dello studente: ");
+            studenti.get(i).setAnnoDiNascita(scannerNumero.nextInt());
+            System.out.println("Inserisci classe dello studente: ");
+            studenti.get(i).setClasse(scannerNumero.nextInt());
+            System.out.println("Inserisci la sezione dello studente: ");
+            studenti.get(i).setSezione(scannerTesto.nextLine().trim());
+
+            System.out.println("Tutti i dati sono stati correttamente inseriti");
+            System.out.println("Vuoi inserire un altro studente? S/N");
+            char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
+
+            if (conferma == 'N') {
+                studenti.add(new Studente());
+                // ripeti resta true
+                // aumento i per tenere conto della posizione del nuovo studente nell'ArrayList
+                i++;
+            }
+
+        } while (ripeti);
+    }
+/*     public void aggiungiStudente() {     
         Studente studente1 = new Studente();
 
         studente1.setNome("Mario");
@@ -29,7 +63,7 @@ public class Scuola {
         studente2.setSezione("B");
 
         studenti.add(studente2);
-    }
+    } */
 
     public void stampaStudenti() {
         // i mi serve per tenere traccia della posizione all'interno dell'ArrayList

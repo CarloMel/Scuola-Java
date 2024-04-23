@@ -3,7 +3,7 @@ public class Studente extends Persona {
     private int classe;
     private String sezione;
     private String matricola;
-    // ***this.annoDiNascita = annoDiNascita !! super.annoDiNascita = annoDiNascita NON FUNZIONANO. Le date restano 0***
+    
     @Override
     public void setAnnoDiNascita(int annoDiNascita) {
 
@@ -11,7 +11,6 @@ public class Studente extends Persona {
             System.out.println("Si accettano solo studenti nati prima del 2018 (2018 compreso)");
         }
         System.out.println("Anno di nascita inserito correttamente ");
-        System.out.println("Hai inserito: " + getAnnoDiNascita());
         this.annoDiNascita = annoDiNascita;
     }
 
