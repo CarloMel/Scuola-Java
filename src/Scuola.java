@@ -193,8 +193,6 @@ public class Scuola {
             switch (index) {
                 case 1:
                 aggiungiStudente();
-                System.out.println("\n Premi un tasto e Invio per tornare al menu");
-                scannerTesto.nextLine().toUpperCase().charAt(0);
                 break;
                 case 2:
                 aggiungiProfessore();
