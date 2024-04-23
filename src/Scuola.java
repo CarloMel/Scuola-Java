@@ -7,7 +7,7 @@ public class Scuola {
     Scanner scannerNumero = new Scanner(System.in);
     Scanner scannerTesto = new Scanner(System.in);
     List<Studente> studenti = new ArrayList<Studente>();
-    //ArrayList<Docente> docenti = new ArrayList<Docente>();
+    List<Docente> docenti = new ArrayList<Docente>();
     //ArrayList<MembroClub> membriClub = new ArrayList<MembroClub>();
 
     public void aggiungiStudenti() {
@@ -47,6 +47,33 @@ public class Scuola {
         } while (ripeti);
     }
 
+    public void aggiungiProfessori () {
+        int i = 0;
+        boolean ripeti = true;
+        docenti.add(new Docente());
+        do {
+            System.out.println("Docente numero " + (i + 1) + "\n");
+            System.out.println("Inserisci il nome del docente: ");
+            docenti.get(i).setNome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci il cognome del docente: ");
+            docenti.get(i).setCognome(scannerTesto.nextLine().trim());
+            System.out.println("Inserisci la data di nascita del docente: ");
+            docenti.get(i).setAnnoDiNascita(scannerNumero.nextInt());
+            System.out.println("Inserisci classe del docente: ");
+            docenti.get(i).setMateria(scannerTesto.nextLine());
+            System.out.println("Tutti i dati sono stati correttamente inseriti");
+            System.out.println("Vuoi inserire un altro docente? S/N");
+            char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
+
+            if (conferma == 'S') {
+                docenti.add(new Docente());
+                i++;
+            } else {
+                ripeti = false;
+            }
+
+        } while (ripeti);
+    }
     public void stampaStudenti() {
         // i mi serve per tenere traccia della posizione all'interno dell'ArrayList
         // scriverò (i - 1) altrimenti ignorerebbe il primo elemento dell'ArrayList
