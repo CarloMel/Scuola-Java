@@ -173,5 +173,11 @@ public class Scuola {
         + "Cognome del Medico che lo ha rilasciato: " + iscrittiClub.get(i - 1).getCognomeMedico() + "\n");
         }
     }
+
+    public void start() {
+        System.out.println("Seleziona quale operazione vuoi eseguire");
+        //int index;
+        // inserire un MENU a numeri in cui selezionare le cose da fare
+    }
 }
 
