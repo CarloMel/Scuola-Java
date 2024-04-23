@@ -13,13 +13,33 @@ public class IscrittoClub implements Palestra {
         return nome;
     }
     public void setNome(String nome) {
-        this.nome = nome;
+        boolean ripeti = true;
+        do {
+            if (nome.matches(".*\\d.*")) {
+                System.out.println("Dato non corretto");
+                System.out.println("Nei nomi non può essere presente un numero");
+                nome = scannerTesto.nextLine().trim();
+            } else {
+                this.nome = nome;
+                ripeti = false;
+            }
+        } while (ripeti);
     }
     public String getCognome() {
         return cognome;
     }
     public void setCognome(String cognome) {
-        this.cognome = cognome;
+        boolean ripeti = true;
+        do {
+            if (cognome.matches(".*\\d.*")) {
+                System.out.println("Dato non corretto");
+                System.out.println("Nei cognomi non può essere presente un numero");
+                cognome = scannerTesto.nextLine().trim();
+            } else {
+                this.cognome = cognome;
+                ripeti = false;
+            }
+        } while (ripeti);
     }
 
     @Override
@@ -27,7 +47,7 @@ public class IscrittoClub implements Palestra {
         boolean ripeti = true;
         do {
             // il certificato dura 5 anni
-            if ( annoCertificato >= 2024 && annoCertificato <= 2019) {
+            if ( annoCertificato >= 2019 && annoCertificato <= 2024) {
                 this.annoCertificato = annoCertificato;
                 ripeti = false;
             } else {

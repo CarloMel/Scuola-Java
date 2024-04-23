@@ -102,7 +102,7 @@ public class Scuola {
             char conferma = scannerTesto.nextLine().toUpperCase().charAt(0);
 
             if (conferma == 'S') {
-                studenti.add(new Studente());
+                iscrittiClub.add(new IscrittoClub());
                 // ripeti resta true
                 // aumento i per tenere conto della posizione del nuovo studente nell'ArrayList
                 i++;
